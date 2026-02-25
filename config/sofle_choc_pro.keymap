@@ -127,6 +127,9 @@
             >;
 
             label = "Numbers";
+            sensor-bindings =
+                <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
+                <&inc_dec_kp C_NEXT C_PREVIOUS>;
         };
 
         fun {
@@ -139,6 +142,9 @@
             >;
 
             label = "Function";
+            sensor-bindings =
+                <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
+                <&inc_dec_kp C_PREVIOUS C_NEXT>;
         };
 
         media {
@@ -152,7 +158,7 @@
 
             label = "Media";
             sensor-bindings =
-                <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_DOWN>,
+                <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
                 <&inc_dec_kp C_PREVIOUS C_NEXT>;
         };
 
@@ -166,6 +172,9 @@
             >;
 
             label = "Navigation";
+            sensor-bindings =
+                <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
+                <&inc_dec_kp C_PREVIOUS C_NEXT>;
         };
 
         adjust_layer {
@@ -179,6 +188,9 @@
             >;
 
             label = "adjust";
+            sensor-bindings =
+                <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
+                <&inc_dec_kp C_PREVIOUS C_NEXT>;
         };
 
         lower_layer {
@@ -221,6 +233,9 @@
             >;
 
             label = "Mouse";
+            sensor-bindings =
+                <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
+                <&inc_dec_kp C_PREVIOUS C_NEXT>;
         };
     };
 };
