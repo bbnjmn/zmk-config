@@ -226,17 +226,29 @@
 
         mouse {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                         &trans     &trans          &trans          &trans        &trans           &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &kp K_REDO                        &kp K_PASTE     &kp K_COPY      &kp K_CUT     &kp K_UNDO       &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                            &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans     &trans     &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
-                &trans  &trans  &trans  &trans  &trans      &mkp RCLK  &mkp LCLK  &mkp MCLK       &trans          &trans
+&trans            &trans        &trans            &trans          &trans  &trans                         &trans     &trans          &trans          &trans        &trans           &trans
+&trans            &trans        &trans            &trans          &trans  &trans  &kp K_REDO                        &kp K_PASTE     &kp K_COPY      &kp K_CUT     &kp K_UNDO       &trans
+&kp LEFT_COMMAND  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans  &trans  &trans                            &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
+&trans            &trans        &trans            &trans          &trans  &trans  &trans      &trans     &trans     &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
+                                &trans            &trans          &trans  &trans  &trans      &mkp RCLK  &mkp LCLK  &mkp MCLK       &trans          &trans
             >;
 
             label = "Mouse";
             sensor-bindings =
                 <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
                 <&inc_dec_kp C_PREVIOUS C_NEXT>;
+        };
+
+        button {
+            bindings = <
+&kp  &kp               &kp           &kp               &kp             &kp                                &kp         &kp              &kp                &kp            &kp                &kp
+&kp  &kp K_UNDO        &kp K_CUT     &kp K_COPY        &kp K_PASTE     &kp K_REDO  &kp K_REDO                         &kp K_PASTE      &kp K_COPY         &kp K_CUT      &kp K_UNDO         &kp
+&kp  &kp LEFT_COMMAND  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp         &kp                                &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_COMMAND  &kp
+&kp  &kp K_UNDO        &kp K_CUT     &kp K_COPY        &kp K_PASTE     &kp K_REDO  &kp         &kp        &kp K_REDO  &kp K_PASTE      &kp K_COPY         &kp K_CUT      &kp K_UNDO         &kp
+                       &kp           &kp               &mkp MCLK       &mkp LCLK   &mkp RCLK   &mkp RCLK  &mkp LCLK   &mkp MCLK        &kp                &kp
+            >;
+
+            label = "Button";
         };
     };
 };
