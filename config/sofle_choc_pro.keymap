@@ -250,6 +250,9 @@
             >;
 
             label = "Button";
+            sensor-bindings =
+                <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
+                <&inc_dec_kp C_PREVIOUS C_NEXT>;
         };
     };
 };
