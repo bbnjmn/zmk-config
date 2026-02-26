@@ -77,6 +77,13 @@
             flavor = "tap-preferred";
             hold-trigger-key-positions = <31 32 33 34>;
         };
+
+        tdBootloader: tdBootloader {
+            compatible = "zmk,behavior-tap-dance";
+            label = "Tape Dance - Double tap Bootloader";
+            #binding-cells = <0>;
+            bindings = <&none>, <&bootloader>;
+        };
     };
 
     keymap {
@@ -107,7 +114,7 @@
         sym {
             bindings = <
 &trans  &trans          &trans           &trans       &trans     &trans                                  &trans  &trans             &trans           &trans         &trans             &trans
-&trans  &kp LEFT_BRACE  &kp AMPS         &kp STAR     &kp LPAR   &kp RIGHT_BRACE  &trans                         &trans             &trans           &trans         &trans             &trans
+&trans  &kp LEFT_BRACE  &kp AMPS         &kp STAR     &kp LPAR   &kp RIGHT_BRACE  &trans                         &trans             &trans           &trans         &tdBootloader      &trans
 &trans  &kp COLON       &kp DLLR         &kp PERCENT  &kp CARET  &kp PLUS         &trans                         &kp RIGHT_CONTROL  &kp RIGHT_SHIFT  &kp RIGHT_ALT  &kp RIGHT_COMMAND  &trans
 &trans  &kp TILDE       &kp EXCLAMATION  &kp AT       &kp HASH   &kp PIPE         &trans         &trans  &trans  &trans             &trans           &trans         &trans             &trans
                         &trans           &trans       &kp LPAR   &kp RPAR         &kp LS(UNDER)  &trans  &trans  &trans             &trans           &trans
