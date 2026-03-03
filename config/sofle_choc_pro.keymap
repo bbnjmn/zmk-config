@@ -88,6 +88,43 @@
         };
     };
 
+    macros {
+        MY_COPY: MY_COPY {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(C)>;
+            label = "MY_COPY";
+        };
+
+        MY_PASTE: MY_PASTE {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(V)>;
+            label = "MY_PASTE";
+        };
+
+        MY_UNDO: MY_UNDO {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(Z)>;
+            label = "MY_UNDO";
+        };
+
+        MY_REDO: MY_REDO {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LS(Z))>;
+            label = "MY_REDO";
+        };
+
+        MY_CUT: MY_CUT {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(X)>;
+            label = "MY_CUT";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -175,11 +212,11 @@
 
         nav {
             bindings = <
-&trans  &trans            &trans        &trans          &trans            &trans                      &trans    &trans         &trans       &trans     &trans        &trans
-&trans  &tdBootloader     &trans        &trans          &trans            &trans  &kp K_REDO                    &kp K_PASTE    &kp K_COPY   &kp K_CUT  &kp K_REDO    &trans
-&trans  &kp LEFT_COMMAND  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &trans  &kp LEFT                      &kp DOWN       &kp UP       &kp RIGHT  &kp CAPSLOCK  &trans
-&trans  &trans            &trans        &trans          &trans            &trans  &trans      &trans  &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &kp INS       &trans
-                          &trans        &trans          &trans            &trans  &trans      &trans  &trans    &trans         &trans       &trans
+&trans  &trans            &trans        &trans          &trans            &trans                    &trans    &trans         &trans       &trans     &trans        &trans
+&trans  &tdBootloader     &trans        &trans          &trans            &trans  &MY_REDO                    &MY_PASTE      &MY_COPY     &MY_CUT    &MY_REDO      &trans
+&trans  &kp LEFT_COMMAND  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &trans  &kp LEFT                    &kp DOWN       &kp UP       &kp RIGHT  &kp CAPSLOCK  &trans
+&trans  &trans            &trans        &trans          &trans            &trans  &trans    &trans  &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &kp INS       &trans
+                          &trans        &trans          &trans            &trans  &trans    &trans  &trans    &trans         &trans       &trans
             >;
 
             label = "Navigation";
@@ -236,11 +273,11 @@
 
         mouse {
             bindings = <
-&trans  &trans            &trans        &trans          &trans            &trans                         &trans     &trans          &trans          &trans        &trans           &trans
-&trans  &tdBootloader     &trans        &trans          &trans            &trans  &kp K_REDO                        &kp K_PASTE     &kp K_COPY      &kp K_CUT     &kp K_UNDO       &trans
-&trans  &kp LEFT_COMMAND  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &trans  &trans                            &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
-&trans  &trans            &trans        &trans          &trans            &trans  &trans      &trans     &trans     &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
-                          &trans        &trans          &trans            &trans  &trans      &mkp RCLK  &mkp LCLK  &mkp MCLK       &trans          &trans
+&trans  &trans            &trans        &trans          &trans            &trans                       &trans     &trans          &trans          &trans        &trans           &trans
+&trans  &tdBootloader     &trans        &trans          &trans            &trans  &MY_REDO                        &MY_PASTE       &MY_COPY        &MY_CUT       &MY_UNDO         &trans
+&trans  &kp LEFT_COMMAND  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &trans  &trans                          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
+&trans  &trans            &trans        &trans          &trans            &trans  &trans    &trans     &trans     &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
+                          &trans        &trans          &trans            &trans  &trans    &mkp RCLK  &mkp LCLK  &mkp MCLK       &trans          &trans
             >;
 
             label = "Mouse";
@@ -251,11 +288,11 @@
 
         button {
             bindings = <
-&trans  &trans            &trans        &trans          &trans            &trans                             &trans      &trans             &trans           &trans         &trans             &trans
-&trans  &kp K_UNDO        &kp K_CUT     &kp K_COPY      &kp K_PASTE       &kp K_REDO  &kp K_REDO                         &kp K_PASTE        &kp K_COPY       &kp K_CUT      &kp K_UNDO         &trans
-&trans  &kp LEFT_COMMAND  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &trans      &trans                             &kp RIGHT_CONTROL  &kp RIGHT_SHIFT  &kp RIGHT_ALT  &kp RIGHT_COMMAND  &trans
-&trans  &kp K_UNDO        &kp K_CUT     &kp K_COPY      &kp K_PASTE       &kp K_REDO  &trans      &trans     &kp K_REDO  &kp K_PASTE        &kp K_COPY       &kp K_CUT      &kp K_UNDO         &trans
-                          &trans        &trans          &mkp MCLK         &mkp LCLK   &mkp RCLK   &mkp RCLK  &mkp LCLK   &mkp MCLK          &trans           &trans
+&trans  &trans            &trans        &trans          &trans            &trans                           &trans     &trans             &trans           &trans         &trans             &trans
+&trans  &MY_UNDO          &MY_CUT       &MY_COPY        &MY_PASTE         &MY_REDO   &MY_REDO                         &MY_PASTE          &MY_COPY         &MY_CUT        &MY_UNDO           &trans
+&trans  &kp LEFT_COMMAND  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &trans     &trans                           &kp RIGHT_CONTROL  &kp RIGHT_SHIFT  &kp RIGHT_ALT  &kp RIGHT_COMMAND  &trans
+&trans  &MY_UNDO          &MY_CUT       &MY_COPY        &MY_PASTE         &MY_REDO   &trans     &trans     &MY_REDO   &MY_PASTE          &MY_COPY         &MY_CUT        &MY_UNDO           &trans
+                          &trans        &trans          &mkp MCLK         &mkp LCLK  &mkp RCLK  &mkp RCLK  &mkp LCLK  &mkp MCLK          &trans           &trans
             >;
 
             label = "Button";
